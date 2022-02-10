@@ -7,7 +7,7 @@ var subarraySum = function(nums, k) {
   let map = { 0: 1 };
   let count = 0;
   let sum = 0;
-
+  // element + sum = k
   for (let i = 0; i < nums.length; i++) {
     sum += nums[i];
     count += map[sum - k] || 0;
