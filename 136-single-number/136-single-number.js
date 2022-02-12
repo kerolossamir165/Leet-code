@@ -11,6 +11,8 @@ var singleNumber = function(nums) {
       map[nums[i]] = 1;
     }
   }
-  return Object.keys(map).find((el) => map[el] === 1);
+    
+   
+   return Object.keys(map).find((el) => map[el] === 1);
    
 };
