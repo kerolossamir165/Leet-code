@@ -3,6 +3,17 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
- let isExist = nums.filter((el,i )=> nums.indexOf(el) !== i)
-  return isExist.length ? true : false
+ let map = {};
+  let flag = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (map[nums[i]]) {
+      map[nums[i]] += 1;
+      flag++;
+    } else {
+      map[nums[i]] = 1;
+    }
+  }
+
+  return flag ? true : false;
 };
