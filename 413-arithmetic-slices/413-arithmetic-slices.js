@@ -8,7 +8,7 @@ var numberOfArithmeticSlices = function(nums) {
 
   for (let i = 0; i < nums.length; i++) {
   
-    if (nums[i] - nums[i -1] ===  nums[i - 1] - nums[i - 2]) {
+    if (nums[i] - nums[i + 1] ===  nums[i + 1] - nums[i + 2]) {
       flag++;
       result += flag;
     } else {
