@@ -12,5 +12,4 @@ var firstUniqChar = function(s) {
     }
   }
   return s.indexOf(Object.keys(map).find((key) => map[key] === 1));
- 
 };
