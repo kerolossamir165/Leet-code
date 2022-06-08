@@ -16,5 +16,9 @@ function  isPlaindrom(s) {
   return true
 }
 var removePalindromeSub = function(s) {
-  return isPlaindrom(s) ? 1 : 2
+  // return isPlaindrom(s) ? 1 : 2
+    let re = /[\W_]/g;
+  let lowRegStr = s.toLowerCase().replace(re, '');
+  let reverseStr = lowRegStr.split('').reverse().join(''); 
+  return reverseStr === lowRegStr ? 1 : 2
 };
