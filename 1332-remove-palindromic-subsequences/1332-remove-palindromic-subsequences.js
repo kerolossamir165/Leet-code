@@ -22,9 +22,6 @@ var removePalindromeSub = function(s) {
   // let reverseStr = lowRegStr.split('').reverse().join(''); 
   // return reverseStr === lowRegStr ? 1 : 2
     
-      let re = /[\W_]/g;
-
-  s = s.toLowerCase().replace(re, '');
   let len = s.length
   for (var i = 0; i < len/2; i++) {
     if (s[i] !== s[len - 1 - i]) { 
