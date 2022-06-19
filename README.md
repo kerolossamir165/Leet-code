@@ -1,3 +1,3 @@
 # JavaScript Algorithms From Leet Code 
 
-This repository contains the questions tha i solved in leet code site in JavaScript ('https://leetcode.com/')
+This repository contains the questions that i solved in leetcode site with JavaScript and typescript ('https://leetcode.com/')
