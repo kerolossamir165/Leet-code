@@ -7,8 +7,9 @@ var fib = function(n) {
     //     return n
     // }
     // return fib(n - 1) + fib(n - 2)
-    
-  let dp = { 0: 0, 1: 1 };
+ if(n == 0 || n == 1) return n;
+
+  let dp = {};
   if (!n || dp[n]) return dp[n];
 
   return (dp[n] = fib(n - 1) + fib(n - 2));
