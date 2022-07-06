@@ -15,9 +15,12 @@ var fib = function(n) {
   
 //   if (!n || map[n]) return map[n];
 //   return map[n] = fib(n - 1) + fib(n - 2);
-    
-  let memo = {0 : 0 , 1 : 1};
-  if (!n || memo[n]) return memo[n];
-  memo[n] = fib(n - 1) + fib(n - 2);
-  return memo[n];
+    let memo = {0: 0 , 1: 1}
+    // if(n <=2) return 1;
+    // memo[n]=fib(n-1) + fib(n-2);
+    // return memo[n];
+      if (n in memo) return memo[n];
+      if (n <= 2) return 1;
+      memo[n] = fib(n-1) + fib(n-2) 
+      return memo[n];
 };
