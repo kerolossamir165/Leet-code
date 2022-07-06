@@ -3,18 +3,18 @@
  * @return {number}
  */
 
-var fibMemo = function(n, memo = {}) {
-  if (n in memo) return memo[n];
-  if (n === 0 || n === 1) return n;
-  memo[n] = fibMemo(n-1, memo) + fibMemo(n-2, memo);
-  return memo[n];
-}
+// var fibMemo = function(n, memo = {}) {
+//   if (n in memo) return memo[n];
+//   if (n === 0 || n === 1) return n;
+//   memo[n] = fibMemo(n-1, memo) + fibMemo(n-2, memo);
+//   return memo[n];
+// }
 
 var fib = function(n) {
-    // while(n <= 1 ) {
-    //     return n
-    // }
-    // return fib(n - 1) + fib(n - 2)
+    while(n <= 1 ) {
+        return n
+    }
+    return fib(n - 1) + fib(n - 2)
     /////////////////////////////////////////////////
 //  if(n == 0 || n == 1) return n;
 
@@ -24,6 +24,6 @@ var fib = function(n) {
 //   return (dp[n] = fib(n - 1) + fib(n - 2));
     //////////////////////////////
     
-    return fibMemo(n)
+    // return fibMemo(n)
     
 };
