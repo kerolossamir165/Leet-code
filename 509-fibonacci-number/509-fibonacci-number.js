@@ -8,19 +8,9 @@ var fib = function(n) {
     // }
     // return fib(n - 1) + fib(n - 2)
     
-//    let map = {
-//    0 : 0 ,
-//    1 : 1 
-// }
-  
-//   if (!n || map[n]) return map[n];
-//   return map[n] = fib(n - 1) + fib(n - 2);
-    let memo = {0: 0 , 1: 1}
-    // if(n <=2) return 1;
-    // memo[n]=fib(n-1) + fib(n-2);
-    // return memo[n];
-      if (n in memo) return memo[n];
-      if (n <= 2) return 1;
-      memo[n] = fib(n-1) + fib(n-2) 
-      return memo[n];
+  let dp = { 0: 0, 1: 1 };
+  if (!n || dp[n]) return dp[n];
+
+  return (dp[n] = fib(n - 1) + fib(n - 2));
+    
 };
