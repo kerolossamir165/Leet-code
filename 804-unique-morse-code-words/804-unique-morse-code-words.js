@@ -34,46 +34,16 @@ z: "--..",
 }
 
 
-var uniqueMorseRepresentations = function(words) {let aplphbet = Array.from(Array(26))
-    .map((el, i) => i + 97)
-    .map((el) => String.fromCharCode(el));
-  let morseArr = [
-    ".-",
-    "-...",
-    "-.-.",
-    "-..",
-    ".",
-    "..-.",
-    "--.",
-    "....",
-    "..",
-    ".---",
-    "-.-",
-    ".-..",
-    "--",
-    "-.",
-    "---",
-    ".--.",
-    "--.-",
-    ".-.",
-    "...",
-    "-",
-    "..-",
-    "...-",
-    ".--",
-    "-..-",
-    "-.--",
-    "--.."
-  ];
-let set = new Set()
+var uniqueMorseRepresentations = function(words) {
+
+  let set = new Set()
   let map = {}
   
   for (let i = 0; i < words.length; i++) {
     let str = "";
     for (let l = 0; l < words[i].length; l++) {
       const c = words[i][l].toLowerCase()
-      let index = aplphbetToMorse[c]
-      str += index;
+      str += aplphbetToMorse[c];
     
     }
     set.add(str)
