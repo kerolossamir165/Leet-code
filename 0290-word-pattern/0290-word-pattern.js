@@ -9,7 +9,6 @@ var wordPattern = function(pattern, s) {
   let arrS = s.split(' ');
   let setPattern = new Set([...pattern]);
   let setWords = new Set([...arrS]);
-  console.log(pattern.length !== arrS.length);
 
   if (pattern.length !== arrS.length || setPattern.size !== setWords.size)
     return false;
@@ -22,5 +21,6 @@ var wordPattern = function(pattern, s) {
       dataS[arrS[i]] = pattern[i];
     }
   }
-  return true;  
+  return true; 
+
 };
