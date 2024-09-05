@@ -4,7 +4,22 @@
  */
 
 
+/**
+    Union Find 
+    so to solve this problem 
+    you will need to create a outer cell that will connect to every "O" that exist 
+    in the corner of the grid 
+    row =0 || row == gridLength -1 || col == 0 || col == gridLength 
+    
+    and for every other "O" will be connected to the "X" cells 
+    
+    after the connection 
+    
+    we will loop and check if  the cell is not connected to The outer 
+    will chenge it to "X"
+    
 
+*/
 
 class UF {
     constructor(n) {
