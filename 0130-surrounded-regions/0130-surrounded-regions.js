@@ -47,7 +47,6 @@ let directions = [
     [0, 1]  
     // up, down, left, right
 ]
-
 var solve = function(board) {
     let gridSize = board.length * board[0].length 
     let outer = gridSize 
@@ -94,4 +93,3 @@ var solve = function(board) {
     return board
     
 };
-
