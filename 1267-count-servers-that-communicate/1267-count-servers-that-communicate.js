@@ -52,8 +52,8 @@ class Uf {
 }
 
 
-
-var countServers = function(grid) {
+// with union find 
+var countServers2 = function(grid) {
    let gridSize = grid.length * grid[0].length 
     let servers = new Uf(gridSize)
     let count = 0
@@ -96,5 +96,42 @@ var countServers = function(grid) {
         }
     }
     
+    return count 
+};
+
+
+// with 2 loops 
+function checkOneCell (grid, i , j ) {
+    for (let row = 0; row < grid.length; row++) {
+                    
+        if(grid[row][j] &&  i !== row) {                                   
+           return 1
+        }
+    }
+
+    // Get all cells in the same row (i)
+    for (let col = 0; col < grid[0].length ; col++) {
+        if(grid[i][col] && j !== col) {
+            return 1
+        }                                           
+    }  
+    return 0
+}
+
+var countServers = function(grid) {
+   
+    let count = 0
+
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[0].length; j++) { 
+            if(grid[i][j]) {
+                count += checkOneCell(grid , i ,j)
+
+            }
+            
+        }
+    }
+    
+
     return count 
 };
