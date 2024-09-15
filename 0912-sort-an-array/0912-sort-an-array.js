@@ -2,47 +2,49 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-function merge(arr, low , mid , high) {
-    let aux = []
-    for(let k = low ; k <= high ; k++) {
-        aux[k] = arr[k]
-    }
-    let i = low
-    let j = mid + 1
+function mergeSort(arr) {
 
+    if(arr.length === 1) return arr
 
-    for (let k = low ; k <= high; k++) {
-        if(i > mid) {
-            arr[k] = aux[j++]
-        }else if (j > high) {
-            arr[k] = aux[i++]
-        }else if (aux[i] <= aux[j]) {
-            arr[k]= aux[i++]
+    let mid = Math.floor(arr.length  /2 )
+
+    let left = arr.slice(0, mid)
+    let right = arr.slice(mid)
+
+    let leftSorted = mergeSort(left)
+    let rightSorted = mergeSort(right)
+
+    return merge(leftSorted, rightSorted)
+
+}
+
+function merge(left, right) {
+    let temp = []
+    let leftPointer = 0
+    let rightPointer = 0
+
+    while(leftPointer < left.length && rightPointer < right.length) {
+        if( left[leftPointer] < right[rightPointer]) {
+            temp.push(left[leftPointer])
+            leftPointer++
         }else {
-            arr[k] = aux[j++]
+            temp.push(right[rightPointer])
+            rightPointer++;
         }
-    }  
-    return arr
-}
-function mergeSort(arr, low = 0, high= arr.length - 1) {
-    if(arr.length == 1) {
-        return arr
-    }
-    
-    if(low >= high) {
-        return 
     }
 
-    let mid = Math.floor((low + high) /2 )
+    while(leftPointer < left.length){
+        temp.push(left[leftPointer])
+        leftPointer++
+    }
 
-    mergeSort(arr, low, mid)
-    mergeSort(arr, mid + 1, high)
-
-    merge(arr, low, mid, high)
-
-
-    return arr
+    while(rightPointer < right.length){
+        temp.push(right[rightPointer])
+        rightPointer++
+    }
+    return temp
 }
+
 
 var sortArray = function(nums) {
     
